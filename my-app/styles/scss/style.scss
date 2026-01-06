@@ -1,0 +1,48 @@
+@import "../bootstrap/scss/mixins";
+@import "../bootstrap/scss/functions";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/variables-dark";
+@import "../bootstrap/scss/maps";
+@import "../bootstrap/scss/utilities";
+@import "../bootstrap/scss/offcanvas";
+@import "../bootstrap/scss/tooltip";
+
+/*Variables*/
+$primary: #252970;
+$light-primary: #ccb7e1;
+$secondary:  #D23C61;
+$light-secondary: #f7913521;
+$white: #fff;
+$light-blue:#d9f1ff;
+$blue:#48b6ff;
+$light-gray: #f5f5f5;
+
+// sass utilities, mixins start
+$utilities: map-merge($utilities,
+  ("w": (property: width, responsive: true, class: w, values:(("30px":30px, "35px":35px, "40px":40px, "50px":50px, "60px":60px, "70px":70px, "12":12%, "15":15%, "20":20%, "22":22%, "23":23%, "25":25%, "27":27%, "30":30%, "40":40%, "45":45%, "50":50%, "65":65%, "70":70%, "75":75%, "100":100%, "fit-content":fit-content))),
+    "mw": (property: min-width, responsive: true, class: mw, values:(("35px":35px, ))),
+    "h": (property: height, responsive: true, class: h, values:(("30px":30px, "35px":35px, "40px":40px, "50px":50px, "55px":55px, "60px":60px, "70px":70px, "90px":90px, "250px":250px, "290px":290px, "300px":300px, "350px":350px, "400px":400px, "430px":430px))),
+    "fs": (property: font-size, responsive: true, class: fs, values:(("10px":10px, "12px":12px, "14px":14px, "15px":15px, "16px":16px, "17px":17px, "18px":18px, "20px":20px, "22px":22px, "24px":24px, "25px":25px, "28px":28px, "30px":30px, "34px":34px, "40px":40px, "46px":46px))),
+    "pt": (property: padding-top, responsive: true, class: pt, values:(("75px":75px, "260px":260px, "100px":100px, "125px":125px, "130px":130px, "140px":140px, "150px":150px, "160px":160px, "320px":320px, "400px":400px))),
+    "pb": (property: padding-bottom, responsive: true, class: pb, values:(("40px":40px, "100px":100px, "260px":260px, "50px":50px, "60px":60px, "80px":80px, "90px":90px, "150px":150px, "180px":180px))),
+    "ps": (property: padding-left, responsive: true, class: ps, values:(("15px":15px, "30px":30px, "35px":35px, "125px":125px))),
+    "pe": (property: padding-right, responsive: true, class: pe, values:(("15px":15px))),
+    "mt": (property: margin-top, responsive: true, class: mt, values:(("5px":5px))),
+    "fw": (property: font-weight, class: fw, values:(("400":400, "500":500, "600":600))),
+    "bottom": (property: bottom, responsive: true, class: bottom, values:(("n60px":-60px, "n2px":-2px, "n75px":-75px, "15px":15px, "100px":100px))),
+    "top": (property: top, responsive: true, class: top, values:(("n15px":-15px, "n35px":-35px, "n115px":-115px, "5px":5px, "10px":10px, "20px":20px, ))),
+    "start": (property: left, responsive: true, class: start, values:(("0":0, "10px":10px, "n30px":-30px, "n15px":-15px, "n50px":-50px, "n60px":-60px, "15px":15px, "150px":150px))),
+    "end": (property: right, responsive: true, class: end, values:(("0":0, "10px":10px, "15px":15px, "50px":50px))),
+    "lh": (property: line-height, responsive: true, class: lh, values:(("30px":30px, "35px":35px))),
+  ));
+
+@import "../bootstrap/scss/bootstrap.scss";
+
+body {
+  font-family: 'Jost', sans-serif;
+}
+
+p {
+  line-height: 26px !important;
+}
+
