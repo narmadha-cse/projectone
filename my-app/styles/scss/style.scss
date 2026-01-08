@@ -8,22 +8,48 @@
 @import "../bootstrap/scss/tooltip";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+//theme colore
+$custom-colors: (
+  "primary": #0057ff,
+  "dark-primary": #00308C,
+  "primary-lighten-1": #e6eeff,
+  "secondary": #92278F,
+  "success": #299B3F,
+  "info": #00697B,
+  "note": #B27700,
+  "warning": #9A5300,
+  "danger": #B7322C,
+  "dark": #1E002D,
+  "grey": #68616B,
+  "grey-lighten-1": #928D95,
+  "grey-lighten-2": #ABA4AF,
+  "grey-lighten-3": #CBC9CC,
+  "grey-lighten-4": #F4F3F4,
+);
 
-/*Variables*/
-$dark: #000;
-$primary: #0057ff;
-$dark-primary: #00308C;
-$secondary: #92278F;
-$light-secondary: #f7913521;
-$white: #fff;
-$light-blue: #d9f1ff;
-$blue: #48b6ff;
-$light-gray: #f5f5f5;
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// variables
+$dark: #1E002D;
+$primary: map-get($theme-colors, "primary");
+$dark-primary: map-get($theme-colors, "dark-primary");
+$primary-lighten-1: map-get($theme-colors, "primary-lighten-1");
+$secondary: map-get($theme-colors, "secondary");
+$success: map-get($theme-colors, "success");
+$danger: map-get($theme-colors, "danger");
+$info: map-get($theme-colors, "info");
+$note: map-get($theme-colors, "note");
+$warning: map-get($theme-colors, "warning");
+$grey: map-get($theme-colors, "grey"); 
+$grey-lighten-2: map-get($theme-colors, "grey-lighten-2"); 
+$grey-lighten-3: map-get($theme-colors, "grey-lighten-3");
+$grey-lighten-4: map-get($theme-colors, "grey-lighten-4");
 
 // sass utilities, mixins start
 $utilities: map-merge($utilities,
-    ("w": (property: width, responsive: true, class: w, values:(("30px":30px, "35px":35px, "40px":40px, "50px":50px, "60px":60px, "70px":70px, "12":12%, "15":15%, "20":20%, "22":22%, "23":23%, "25":25%, "27":27%, "30":30%, "40":40%, "45":45%, "50":50%, "65":65%, "70":70%, "75":75%,  "90":90%, "100":100%, "fit-content":fit-content))),
+    ("w": (property: width, responsive: true, class: w, values:(("30px":30px, "35px":35px, "40px":40px, "50px":50px, "60px":60px, "70px":70px, "12":12%, "15":15%, "20":20%, "22":22%, "23":23%, "25":25%, "27":27%, "30":30%, "40":40%, "45":45%, "50":50%, "65":65%, "70":70%, "75":75%,"85":85%, "90":90%, "100":100%, "fit-content":fit-content))),
       "mw": (property: min-width, responsive: true, class: mw, values:(("35px":35px, ))),
+      "mh": (property: min-height, responsive: true, class: mh, values:(("35px":35px,"60px":60px, ))),
       "h": (property: height, responsive: true, class: h, values:(("30px":30px, "35px":35px, "40px":40px, "50px":50px, "55px":55px, "60px":60px, "70px":70px, "90px":90px, "125px":125px, "250px":250px, "290px":290px, "300px":300px, "350px":350px, "400px":400px, "430px":430px))),
       "fs": (property: font-size, responsive: true, class: fs, values:(("10px":10px, "12px":12px, "14px":14px, "15px":15px, "16px":16px, "17px":17px, "18px":18px, "20px":20px, "22px":22px, "24px":24px, "25px":25px, "28px":28px, "30px":30px, "34px":34px, "40px":40px, "46px":46px, "60px":60px))),
       "pt": (property: padding-top, responsive: true, class: pt, values:(("75px":75px, "260px":260px, "100px":100px, "125px":125px, "130px":130px, "140px":140px, "150px":150px, "160px":160px, "320px":320px, "400px":400px))),
@@ -45,6 +71,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  overflow-x: hidden;
 }
 
 section {
@@ -62,23 +89,23 @@ h6 {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 700;
   line-height: 60px;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 700;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 700;
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -95,51 +122,129 @@ p {
   }
 }
 
-.banner{
-  padding: 120px 0 80px;
+.banner {
+  padding: 165px 0 115px;
   background: radial-gradient(circle at 75% 55%, #563EDB 0%, #563EDB 0%, #1A1A1A 48%);
-  p{font-size: 18px; font-weight: 600;}
+
+  p {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
   color: $white;
 }
 
-.link{
-  li a{
+.btn{font-weight: 600;}
+
+.section-2 {
+  background: url(../../public/images/bg-image.png) no-repeat 50%;
+  background-size: cover !important;
+}
+
+.link {
+  li a {
     font-size: 16px;
     color: $white;
   }
 
-.nav-link,
-a {
-  position: relative;
-  display: inline-block;
-  color: $white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 100%;
-    height: 1px;
-    background-color: currentColor;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-  }
-
-  &:hover {
+  .nav-link,
+  a {
+    position: relative;
+    display: inline-block;
     color: $white;
-  }
+    text-decoration: none;
+    transition: color 0.3s ease;
 
-  &:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 1px;
+      background-color: currentColor;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      color: $white;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
   }
 }
 
+
+// Variables (adjust if already defined globally)
+$tab-active-color: #0d6efd; // Bootstrap primary
+$tab-text-color: #000000;
+
+.nav-tabs {
+  border-bottom: none;
+  gap: 80px; // spacing between tabs
+  justify-content: start;
+
+  .nav-link {
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    font-weight: 500;
+    color: $tab-text-color;
+    padding: 0 0 16px 0;
+    position: relative;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      border: none;
+      color: $tab-active-color;
+      background: transparent;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    &.active {
+      color: $tab-active-color;
+      background: transparent;
+
+      &::after {
+        background-color: $tab-active-color;
+      }
+    }
+  }
 }
+
+.tab-content {
+  margin-top: 40px;
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel-control-prev {
+  left: -105px;
+}
+
+.carousel-control-next {
+  right: -105px;
+}
+
 
 .footer {
   position: relative;
@@ -179,4 +284,12 @@ a {
     margin-top: 16px;
 
   }
+}
+
+
+.card_tab{
+  height: 350px;
+    width: initial;
+    background-repeat: no-repeat;
+    background-size: contain;
 }

@@ -6,13 +6,13 @@ const Footer = () => {
       <div className="container">
         <div className="position-absolute top-n50px start-0 end-0 mx-auto w-90 w-xl-90 mx-3">
           <div className="p-4 bg-dark-primary rounded-4 text-white" style={{ background: "#00308C" }}>
-            <div className="row">
-              <div className="col-md-8">
+            <div className="row justify-content-center">
+              <div className="col-xl-8 text-center text-xl-start mb-4 mb-xl-0">
                 <h3>Want to stay on top of the latest digital and MarTech news?</h3>
                 <p className="mb-md-0">Sign up for our newsletter to keep on top of What’s Hot, What’s New and What’s Next!</p>
 
               </div>
-              <div className="col-md-4">
+              <div className="col-md-7 col-xl-4 text-center text-xl-start ">
                 <div class="input-group mb-1">
                   <input type="text" class="form-control" placeholder="Enter Your Email address" aria-label="Enter Your Email address" aria-describedby="basic-addon2" />
                   <span class="input-group-text bg-primary text-white fw-medium" id="basic-addon2">Send</span>
@@ -70,11 +70,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer-privacy d-flex gap-3 align-items-center justify-content-between">
-          <div>
+        <div className="footer-privacy d-md-flex gap-3 align-items-center justify-content-between">
+          <div className="text-center text-md-start mb-3 mb-md-0">
             © Copyright 2025–26 cxontology Private Limited. All rights reserved.
           </div>
-          <div className="d-flex gap-3">
+          <div className="d-flex gap-3 justify-content-center justify-content-md-start">
             <div>Privacy Policy</div>
             <div>Terms & Conditions</div>
           </div>

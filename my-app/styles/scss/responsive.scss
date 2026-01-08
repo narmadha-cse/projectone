@@ -1,11 +1,19 @@
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {}
 
 //ipad pro
-@media only screen and (min-width: 991px) and (max-width: 1199px) {}
+@media only screen and (min-width: 991px) and (max-width: 1199px) {
+    .footer {
+  padding: 195px 0 16px;
+}
+}
 
 
 //Ipad
-@media only screen and (min-width:768px) and (max-width:990px) {}
+@media only screen and (min-width:768px) and (max-width:990px) {
+    .footer {
+  padding: 275px 0 16px;
+}
+}
 
 //mobile
 @media (max-width: 767px) {
@@ -46,7 +54,7 @@
   }
 
   .footer {
-  padding: 240px 0 16px;
+  padding: 275px 0 16px;
 }
 
 }
